@@ -1,0 +1,5 @@
+.pytest_cache
+.idea
+.DS_Store
+*.pyc
+*.egg-info
