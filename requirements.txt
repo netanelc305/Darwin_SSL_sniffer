@@ -1,0 +1,6 @@
+pymobiledevice3>=2.0.1
+click>=8.1.3
+scapy>=2.5.0
+parse>=1.19.0
+coloredlogs>=15.0.1
+rpcclient>=3.16.0
