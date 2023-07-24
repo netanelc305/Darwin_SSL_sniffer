@@ -4,6 +4,7 @@ import click
 import coloredlogs
 import rpcclient.protocol
 from pymobiledevice3.cli.cli_common import Command
+from pymobiledevice3.lockdown_service_provider import LockdownServiceProvider
 from rpcclient.client_factory import create_client
 
 from iosslsniffer.sniffer import Filters, Sniffer
@@ -29,11 +30,11 @@ def cli():
 
 @cli.command('setup', cls=Command)
 @click.option('-p', '--port', type=click.INT, default=rpcclient.protocol.DEFAULT_PORT, help='rpc server ip and port')
-def cli_setup(lockdown, port):
+def cli_setup(service_provider: LockdownServiceProvider, port):
     """ Setup all prerequisites required inorder to sniff the SSL traffic """
 
     def usbmux_connect():
-        return lockdown.service.mux_device.connect(port)
+        return service_provider.service.mux_device.connect(port)
 
     rpc = create_client(usbmux_connect)
 
@@ -54,11 +55,11 @@ def cli_setup(lockdown, port):
               help='filter process name list')
 @click.option('images', '-i', '--image', multiple=True, callback=default_none, help='filter image list')
 @click.option('--black-list/--white-list', default=True, is_flag=True)
-def cli_sniff(lockdown, pids, process_names, images, out_file, black_list):
+def cli_sniff(service_provider: LockdownServiceProvider, pids, process_names, images, out_file, black_list):
     """ Sniff the traffic """
 
     filters = Filters(pids, process_names, images, black_list)
-    Sniffer(lockdown, out_file, filters=filters).sniff()
+    Sniffer(service_provider, out_file, filters=filters).sniff()
 
 
 if __name__ == '__main__':
