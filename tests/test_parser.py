@@ -1,6 +1,6 @@
 """Tests for SyslogParser"""
 
-from iosslsniffer.syslog_parser import SyslogParser
+from darwin_ssl_sniffer.syslog_parser import SyslogParser
 
 MSG = ('Jun 19 01:04:37 iPhone apsd(CFNetwork)[157] <Notice>: CFNetwork Diagnostics [3:9376] 01:04:37.469 {\n'
        '{ fd: 2, local 127.0.0.1:49757 => peer 127.0.0.1:5223 testdomain.com} SSL-READ 4: (null)\n'
