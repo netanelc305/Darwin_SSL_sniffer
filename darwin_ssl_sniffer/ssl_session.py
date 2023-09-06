@@ -2,8 +2,8 @@ import binascii
 from dataclasses import dataclass, field
 from typing import List, Tuple
 
-from iosslsniffer.syslog_parser import SyslogParser
-from iosslsniffer.tcp_simulation import TCPSession
+from darwin_ssl_sniffer.syslog_parser import SyslogParser
+from darwin_ssl_sniffer.tcp_simulation import TCPSession
 
 
 @dataclass(repr=True)

@@ -36,4 +36,4 @@ jobs:
           python -m pip install -U .
       - name: Test show usage
         run: |
-          python -m iosslsniffer --help
+          python -m darwin_ssl_sniffer --help

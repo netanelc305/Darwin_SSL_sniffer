@@ -1,4 +1,4 @@
-from iosslsniffer.sniffer import EntryHash, Filters
+from darwin_ssl_sniffer.sniffer import EntryHash, Filters
 
 entry = EntryHash(pid=1, process_name='Test', image='Test_image', domain='TestDomain')
 entry2 = EntryHash(pid=2, process_name='Test2', image='Test_image2', domain='TestDomain2')
