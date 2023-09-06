@@ -1,11 +1,11 @@
 [project]
 name = "darwin-ssl-sniffer"
-version = "0.0.1"
+version = "0.0.3"
 description = "Sniffer for encrypted traffic on darwin-based platforms"
 readme = "README.md"
 requires-python = ">=3.8"
 license = { file = "LICENSE" }
-keywords = ["ios", "jailbreak", "ssl", "sniffer", "tls", "cli", "automation"]
+keywords = ["ios", "jailbreak", "ssl", "sniffer", "tls", "cli", "automation","darwin","osx","macos"]
 authors = [
     { name = "netanelc305", email = "netanelc305@protonmail.com" },
     { name = "doronz88", email = "doron88@gmail.com" },
@@ -16,6 +16,7 @@ maintainers = [
 ]
 classifiers = [
     "Operating System :: iOS",
+    "Operating System :: MacOS",
     "Development Status :: 5 - Production/Stable",
     "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
     "Programming Language :: Python :: 3",
@@ -31,8 +32,8 @@ dynamic = ["dependencies"]
 test = ["pytest"]
 
 [project.urls]
-"Homepage" = "https://github.com/netanelc305/ioSSLsniffer"
-"Bug Reports" = "https://github.com/netanelc305/ioSSLsniffer/issues"
+"Homepage" = "https://github.com/netanelc305/Darwin_SSL_sniffer"
+"Bug Reports" = "https://github.com/netanelc305/Darwin_SSL_sniffer/issues"
 
 [project.scripts]
 pybinpack = "darwin_ssl_sniffer.__main__:cli"
