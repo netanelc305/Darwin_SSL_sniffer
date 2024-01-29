@@ -2,11 +2,10 @@ import logging
 
 import click
 import coloredlogs
-import rpcclient.protocol
 from pymobiledevice3.cli.cli_common import Command, LockdownCommand
 from pymobiledevice3.lockdown import LockdownClient
 from pymobiledevice3.lockdown_service_provider import LockdownServiceProvider
-from rpcclient.client_factory import create_client
+from rpcclient.client_factory import DEFAULT_PORT, create_client
 
 from darwin_ssl_sniffer.sniffer import Filters, HostSniffer, MobileSniffer
 
@@ -35,7 +34,7 @@ def mobile():
 
 
 @mobile.command('setup', cls=LockdownCommand)
-@click.option('-p', '--port', type=click.INT, default=rpcclient.protocol.DEFAULT_PORT, help='rpc server ip and port')
+@click.option('-p', '--port', type=click.INT, default=DEFAULT_PORT, help='rpc server ip and port')
 def cli_setup(service_provider: LockdownClient, port):
     """ Setup all prerequisites required inorder to sniff the SSL traffic """
 
